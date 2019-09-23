@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="content-section">
+        <h1 class='mb-3 d-flex justify-content-center'>Driver standings</h1>
+       <div class="container">
+         <div class="row">
+           <div class="col-sm card-header d-flex justify-content-center">
+             Driver
+           </div>
+           <div class="col-sm card-header d-flex justify-content-center">
+             Place
+           </div>
+           <div class="col-sm card-header d-flex justify-content-center">
+             Points
+           </div>
+         </div>
+       </div>
+       {% for driver in drivers %}
+       <div class="container">
+         <div class="row">
+           <div class="col-sm list-group-item">
+             {{driver[0]}}
+           </div>
+           <div class="col-sm d-flex justify-content-center list-group-item">
+             {{driver[1]}}
+           </div>
+           <div class="col-sm d-flex justify-content-center list-group-item">
+             {{driver[2]}}
+           </div>
+         </div>
+       </div>
+       {% endfor %}
+     </div>
+     <div class="content-section">
+       <h1 class='mb-3 d-flex justify-content-center'>Constructor standings</h1>
+           <div class="container">
+             <div class="row">
+               <div class="col-sm card-header d-flex justify-content-center">
+                 Constructor
+               </div>
+               <div class="col-sm card-header d-flex justify-content-center">
+                 Place
+               </div>
+               <div class="col-sm card-header d-flex justify-content-center">
+                 Points
+               </div>
+             </div>
+           </div>
+           {% for constructor in constructors %}
+           <div class="container">
+             <div class="row">
+               <div class="col-sm list-group-item">
+                 {{constructor[0]}}
+               </div>
+               <div class="col-sm d-flex justify-content-center list-group-item">
+                 {{constructor[1]}}
+               </div>
+               <div class="col-sm d-flex justify-content-center list-group-item">
+                 {{constructor[2]}}
+               </div>
+               <hr>
+             </div>
+           </div>
+           {% endfor %}
+         </div>
+{% endblock content %}

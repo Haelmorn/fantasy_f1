@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="content-section">
+    <h1 class='mb-3'>Current team for {{user.username}}</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm card-header d-flex justify-content-center">
+                Team name
+            </div>
+            <div class="col-sm card-header d-flex justify-content-center font-weight-bold">
+                {{team.name}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm card-header d-flex justify-content-center">
+                Primary driver
+            </div>
+            <div class="col-sm card-header d-flex justify-content-center font-weight-bold">
+                {{team.primary_driver}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm card-header d-flex justify-content-center">
+                Secondary driver
+            </div>
+            <div class="col-sm card-header d-flex justify-content-center font-weight-bold">
+                {{team.secondary_driver}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm card-header d-flex justify-content-center">
+                Constructor
+            </div>
+            <div class="col-sm card-header d-flex justify-content-center font-weight-bold">
+                {{team.team}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm card-header d-flex justify-content-center">
+                Score
+            </div>
+            <div class="col-sm card-header d-flex justify-content-center font-weight-bold">
+                {{team.points}}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
