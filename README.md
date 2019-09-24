@@ -22,12 +22,11 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
+[![Contributors][contributors-shield]][https://github.com/Haelmorn/fantasy_f1/graphs/contributors]
+[![Forks][forks-shield]][https://github.com/Haelmorn/fantasy_f1/network/members]
+[![Stargazers][stars-shield]][https://github.com/Haelmorn/fantasy_f1/stargazers]
+[![Issues][issues-shield]][https://github.com/Haelmorn/fantasy_f1/issues]
 [![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
 
 
 
