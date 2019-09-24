@@ -5,6 +5,7 @@ from flask_login import LoginManager
 from flask_mail import Mail
 from fantasyf1.config import Config
 from flask_caching import Cache
+from flask_heroku import Heroku
 
 
 db = SQLAlchemy()
@@ -12,6 +13,7 @@ bcrypt = Bcrypt()
 login_manager = LoginManager()
 login_manager.login_view = 'users.login'
 login_manager.login_message_category = 'info'
+heroku = Heroku()
 
 mail=Mail()
 cache = Cache(config={'CACHE_TYPE': 'simple'})
@@ -26,6 +28,7 @@ def create_app(config_class=Config):
     login_manager.init_app(app)
     mail.init_app(app)
     cache.init_app(app)
+    heroku.init_app(app)
 
     from fantasyf1.users.routes import users
     from fantasyf1.posts.routes import posts

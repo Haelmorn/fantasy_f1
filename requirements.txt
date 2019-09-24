@@ -10,6 +10,7 @@ Click==7.0
 Flask==1.1.1
 Flask-Bcrypt==0.7.1
 Flask-Caching==1.7.2
+flask-heroku==0.1.9
 Flask-Login==0.4.1
 Flask-Mail==0.9.1
 Flask-SQLAlchemy==2.4.0
@@ -20,6 +21,7 @@ itsdangerous==1.1.0
 Jinja2==2.10.1
 MarkupSafe==1.1.1
 Pillow==6.1.0
+psycopg2-binary==2.8.3
 pycparser==2.19
 requests==2.22.0
 six==1.12.0
