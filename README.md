@@ -78,8 +78,8 @@
 
 <img src="images/home.png" alt="Screenshot">
 
-This project was created to get a basic understanding of Flask and some kind of SQL-like database (this turned out to be postgreSQL).
-The main goal was to give an user the ability to create his own profile, add posts, make his own team composed of F1 drivers and have his team score points based on drivers performance over the course of the season.
+This project was created to get a basic understanding of Flask and some kind of SQL-like database (this turned out to be postgreSQL). Another thing was getting more comfortable with deploying apps in Docker, building docker images, Dockerfiles etc.
+The project revolved around giving an user the ability to create his own profile, add posts, make his own team composed of F1 drivers and have his team score points based on drivers performance over the course of the season.
 
 This project is still a WIP, hence it still suffers from the lack of some key features:
 * Awarding points to teams
