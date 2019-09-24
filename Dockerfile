@@ -4,7 +4,7 @@ WORKDIR .
 
 ENV FLASK_APP run.py
 
-ENV DB_URI site.db
+ENV DB_URI ./site.db
 
 COPY requirements.txt ./
 
