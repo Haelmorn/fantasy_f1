@@ -9,3 +9,4 @@ class Config:
     MAIL_USERNAME = os.environ.get('EMAIL')
     MAIL_PASSWORD = os.environ.get("EMAIL_PASS")
     SQLALCHEMY_TRACK_MODIFICATIONS = False
+    CSRF_ENABLED = True
