@@ -76,7 +76,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Product Name Screen Shot][product-screenshot]](images/home.jpg)
 
 This project was created to get a basic understanding of Flask and some kind of SQL-like database (this turned out to be postgreSQL).
 The main goal was to give an user the ability to create his own profile, add posts, make his own team composed of F1 drivers and have his team score points based on drivers performance over the course of the season.
