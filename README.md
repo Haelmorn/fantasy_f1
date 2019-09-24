@@ -104,8 +104,6 @@ IMPORTANT: This section of the docs only refers to Linux-based systems. If you a
 
 To run this project, you will need pip. It should be installed by default, if you are running python 3.4+.
 If you don't have it, then run:
-Linux
-* npm
 ```sh
 sudo apt-get install python3-pip
 ```
