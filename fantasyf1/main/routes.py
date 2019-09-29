@@ -1,6 +1,6 @@
-from flask import render_template, request, Blueprint
+from flask import render_template, request, Blueprint, url_for
 from fantasyf1.models import Post
-from fantasyf1.main.utils import get_driver_standings, get_last_race_results, get_constructor_standings
+from fantasyf1.main.utils import get_driver_standings, get_last_race_results, get_constructor_standings, get_next_race_data
 from fantasyf1 import cache
 
 main = Blueprint('main', __name__)
@@ -27,3 +27,9 @@ def standings():
     drivers = get_driver_standings()
     constructors = get_constructor_standings()
     return render_template("standings.html", title="Standings", drivers=drivers, constructors=constructors)
+
+@main.route("/next_race")
+@cache.cached(timeout=50)
+def next_race():
+    data = get_next_race_data()
+    return render_template("next_race.html", title="Next race", data=data)

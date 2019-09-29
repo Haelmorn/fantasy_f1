@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+{% block content %}
+{% cache 180*5 %}
+<div class='content-section'>
+    <h1 class='mb-3 d-flex justify-content-center'>Next race</h1>
+    <h1 class='mb-3 d-flex justify-content-center'>{{data['name']}}, {{data['location']}}</h1>
+    <div class="container">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Event</th>
+            <th scope="col">Date</th>
+            <th scope="col">Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">First practice</th>
+            <td>{{ data['first_practice_date'] }}</td>
+            <td>{{ data['first_practice_start'] }}</td>
+          </tr>
+          <tr>
+            <th scope="row">Second practice</th>
+            <td>{{ data['second_practice_date'] }}</td>
+            <td>{{ data['second_practice_start'] }}</td>
+          </tr>
+          <tr>
+            <th scope="row">Third practice</th>
+            <td>{{ data['third_practice_date'] }}</td>
+            <td>{{ data['third_practice_start'] }}</td>
+          </tr>
+          <tr>
+            <th scope="row">Qualifying practice</th>
+            <td>{{ data['qualifying_date'] }}</td>
+            <td>{{ data['qualifying_start'] }}</td>
+          </tr>
+          <tr>
+            <th scope="row">Race</th>
+            <td>{{ data['race_date'] }}</td>
+            <td>{{ data['race_start'] }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</div>
+{% endcache %}
+{% endblock content %}

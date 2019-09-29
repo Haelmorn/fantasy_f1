@@ -3,7 +3,7 @@ from flask_wtf.file import FileField, FileAllowed
 from wtforms import StringField, PasswordField, SubmitField, BooleanField, SelectField
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
 from flask_login import current_user
-from fantasyf1.models import User
+from fantasyf1.models import User, Team
 from fantasyf1.users.utils import get_driver_list, get_constructor_list
 
 class RegistrationForm(FlaskForm):
@@ -80,5 +80,5 @@ class CreateTeamForm(FlaskForm):
         if self.primary_driver.data == self.secondary_driver.data:
             self.secondary_driver.errors.append('Please, select two different drivers')
             return False
-
+        
         return True

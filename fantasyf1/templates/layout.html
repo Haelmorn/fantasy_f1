@@ -49,7 +49,7 @@
      
     <main role="main" class="container">
         <div class="row">
-          <div class="col-md-8">
+          <div class="col-lg-8">
             {% with messages = get_flashed_messages(with_categories=True) %}
                 {% if messages %}
                     {% for category, message in messages %}
@@ -59,15 +59,16 @@
                     {% endfor %}
                 {% endif %}
             {% endwith %}
-            {% block content %}{% endblock %}
+            {% block content %}
+            {% endblock %}
           </div>
-          <div class="col-md-4">
+          <div class="col-lg-4">
             <div class="content-section">
               <h3>Newest information</h3>
               <p class='text-muted'>Check out latest news and results
                 <ul class="list-group">
                   <a class="list-group-item list-group-item-action" href='{{ url_for("main.standings") }}'>Standings</a>
-                  <a class="list-group-item list-group-item-action" href='#'>Next race</a>
+                  <a class="list-group-item list-group-item-action" href='{{ url_for("main.next_race") }}'>Next race</a>
                   <a class="list-group-item list-group-item-action" href='#'>Calendar</a>
                   <a class="list-group-item list-group-item-action" href='{{ url_for("main.about") }}'>About FantasyF1</a>
                 </ul>

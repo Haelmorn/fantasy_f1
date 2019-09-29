@@ -18,7 +18,6 @@ heroku = Heroku()
 mail=Mail()
 cache = Cache(config={'CACHE_TYPE': 'simple'})
 
-
 def create_app(config_class=Config):
     app = Flask(__name__)
     app.config.from_object(Config)

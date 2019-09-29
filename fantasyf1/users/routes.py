@@ -141,3 +141,31 @@ def create_user_team(username):
         flash("Your team has been created!", "success")
         return redirect(url_for("main.home"))
     return render_template("create_team.html", title="Create your team", form=form)
+
+@users.route("/user/<string:username>/update_team", methods=['POST', 'GET'])
+@login_required
+def update_user_team(username):
+    form = CreateTeamForm()
+    user = User.query.filter_by(username=username).first_or_404()
+    team = Team.query.filter_by(head=user).first_or_404()
+    if team.head != current_user:
+        abort(403)
+    if form.validate_on_submit():
+        team = Team(name=form.team_name.data, primary_driver=form.primary_driver.data, secondary_driver=form.secondary_driver.data,
+        team =form.team.data, head=current_user)
+        db.session.add(team)
+        db.session.commit()
+        flash("Your team has been created!", "success")
+        return redirect(url_for("main.home"))
+    elif request.method == "GET":
+        form.team_name.data = team.name
+        form.primary_driver.data = team.primary_driver
+        form.secondary_driver.data = team.secondary_driver
+        form.team.data = team.team
+    return render_template(
+        "create_team.html",
+        title="Update team",
+        form=form, 
+        team=team
+    )
+    return render_template("about.html", title="Create your team")
