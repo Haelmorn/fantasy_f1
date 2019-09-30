@@ -43,7 +43,7 @@ def get_constructor_standings():
 
 def get_next_race_data():
     html = requests.get("https://www.f1calendar.com")
-    soup = bs4(html.content)
+    soup = bs4(html.content, features="html.parser")
     next_race = soup.find("tbody", "next-event")
     data = {}
     data['location'] = next_race.find('span', 'location').contents[0].strip()
@@ -60,3 +60,16 @@ def get_next_race_data():
     data['race_start'] = next_race.find('tr', 'race', 'date-column').contents[5].contents[0].contents[0]
     return data
 
+@cache.cached(timeout=300, key_prefix='calendar')
+def get_calendar():
+    html = requests.get("https://www.f1calendar.com")
+    soup = bs4(html.content, features="html.parser")
+    races = soup.find_all(attrs={'class': 'race'})
+    curated_data = []
+    for race in races:
+        race_data = race.text.strip().split('\n')
+        race_data = [element.strip().replace(",", "") for element in race_data]
+        race_data = [race_data[1], race_data[3], race_data[-2]]
+        curated_data.append(race_data)
+
+    return curated_data

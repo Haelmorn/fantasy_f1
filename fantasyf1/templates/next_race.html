@@ -1,6 +1,5 @@
 {% extends "layout.html" %}
 {% block content %}
-{% cache 180*5 %}
 <div class='content-section'>
     <h1 class='mb-3 d-flex justify-content-center'>Next race</h1>
     <h1 class='mb-3 d-flex justify-content-center'>{{data['name']}}, {{data['location']}}</h1>
@@ -43,5 +42,4 @@
       </table>
     </div>
 </div>
-{% endcache %}
 {% endblock content %}
