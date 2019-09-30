@@ -145,17 +145,18 @@ def create_user_team(username):
 @users.route("/user/<string:username>/update_team", methods=['POST', 'GET'])
 @login_required
 def update_user_team(username):
-    form = CreateTeamForm()
     user = User.query.filter_by(username=username).first_or_404()
     team = Team.query.filter_by(head=user).first_or_404()
     if team.head != current_user:
         abort(403)
+
+    form = CreateTeamForm()
     if form.validate_on_submit():
-        team = Team(name=form.team_name.data, primary_driver=form.primary_driver.data, secondary_driver=form.secondary_driver.data,
-        team =form.team.data, head=current_user)
-        db.session.add(team)
+        team.primary_driver=form.primary_driver.data
+        team.secondary_driver=form.secondary_driver.data,
+        team.team = form.team.data
         db.session.commit()
-        flash("Your team has been created!", "success")
+        flash("Your team has been updated!", "success")
         return redirect(url_for("main.home"))
     elif request.method == "GET":
         form.team_name.data = team.name

@@ -113,7 +113,7 @@ class Team(db.Model):
     """
     __tablename__ = 'team'
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(100), nullable=False, unique=True)
+    name = db.Column(db.String(100), nullable=False)
     primary_driver = db.Column(db.String(100), nullable=False)
     secondary_driver = db.Column(db.String(100), nullable=False)
     team = db.Column(db.String(100), nullable=False)
