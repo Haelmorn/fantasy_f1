@@ -5,6 +5,9 @@ from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationE
 from flask_login import current_user
 from fantasyf1.models import User, Team
 from fantasyf1.users.utils import get_driver_list, get_constructor_list
+from flask_uploads import UploadSet, IMAGES
+
+images = UploadSet('images', IMAGES)
 
 class RegistrationForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired(), Length(min=2, max=20)])
@@ -34,7 +37,7 @@ class LoginForm(FlaskForm):
 class UpdateAccountForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired(), Length(min=2, max=20)])
     email = StringField("Email", validators=[DataRequired(), Email()])
-    picture = FileField("Update profile picture", validators=[FileAllowed(['png', 'jpg', 'jpeg'])])
+    picture = FileField("Update profile picture", validators=[FileAllowed(images, 'Images only!')])
     submit = SubmitField("Update")
 
 
